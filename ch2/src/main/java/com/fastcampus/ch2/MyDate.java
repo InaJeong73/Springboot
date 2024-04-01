@@ -5,6 +5,14 @@ public class MyDate {
     private int month;
     private int day;
 
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
     public int getMonth() {
         return month;
     }
@@ -19,13 +27,5 @@ public class MyDate {
 
     public void setDay(int day) {
         this.day = day;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
     }
 }

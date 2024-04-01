@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--model이 아니라 queryString에 있는 정보를 받을 때는 param을 변수앞에 붙여야 한다.-->
+<form action="/login/login" method="post">
+    <h1 th:text="|${param.msg}|"></h1>
+id:<br>
+<input type="text" name="id"><br>
+password:<br>
+<input type="password" name="pwd"><br>
+
+<input type="submit" value="로그인"><br>
+</form>
+</body>
+</html>
