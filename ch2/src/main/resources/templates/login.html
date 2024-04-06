@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--xmlns:th="http://www.thymeleaf.org"-->
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<h1 th:text="|${param.msg}|"></h1>
+<!--queryString 에서 읽어올때는 param을 붙임.-->
 <!--model이 아니라 queryString에 있는 정보를 받을 때는 param을 변수앞에 붙여야 한다.-->
+
+<h1 th:text="|${msg}|"></h1>
+<!--단순 msg는 redirect attribute을 읽어오는것.-->
+
+<h1 th:text="|${msg}|"></h1>
+<!--request 객체에서 읽어올 때는 변수 앞에 #request.을 붙여야한다. -->
+
+
 <form action="/login/login" method="post">
-    <h1 th:text="|${param.msg}|"></h1>
 id:<br>
 <input type="text" name="id"><br>
 password:<br>
