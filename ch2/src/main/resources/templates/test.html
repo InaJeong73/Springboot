@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--xmlns:th="http://www.thymeleaf.org"-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+    <tr th:each="item : ${list}">
+        <td th:text="${item}"></td>
+    </tr>
+    <tr th:if="${list.size}==0">
+        <td>게시물이 없습니다.</td>
+    </tr>
+</table>
+<h1 th:text="${lastName}">lastName</h1>
+<h1>[[${firstName}]]</h1>
+<h1 th:text="'My name is '+${lastName}+', '+${firstName}">My name is lastName, firstName</h1>
+<h1 th:text="|My name is ${lastName}, ${firstName}|">My name is lastName, firstName</h1>
+<span th:text="${'<i>Namkung, Seong</i>'}"></span>
+<span th:utext="${'<i>Namkung, Seong</i>'}"></span>
+</body>
+</html>
