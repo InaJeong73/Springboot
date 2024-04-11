@@ -18,6 +18,7 @@ public class HomeController {
         model.addAttribute("lastName", "Ina");
         model.addAttribute("firstName", "Jeong");
         model.addAttribute("list", Arrays.asList("aaa", "bbb", "ccc", "ddd", "eee"));
+        model.addAttribute("bno", 123);
         return "test";//templates/test.html
     }
 
