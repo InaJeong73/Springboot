@@ -6,6 +6,7 @@
   background-color:black;
   color:gray;
 }
+
 #header>ul>li{
   list-style:none;
   display: inline-block;

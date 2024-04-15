@@ -1,3 +1,5 @@
+<!---->
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!--xmlns:th="http://www.thymeleaf.org"-->
@@ -12,22 +14,57 @@
     </style>
 </head>
 <body>
-<a href="board.html" th:href="@{/board/list(bno=${bno}, type='L')}">aaa</a>
+<h1 th:text="|year:${year}|"></h1>
+<h1 th:text="|id:${session.id}|"></h1>
+<h1 th:text="|email:${application.email}|"></h1>
+<script th:inline="javascript">
+    var firstName=[[${firstName}]]
+    var lastName=/*[[${lastName}]]*/ "testName"
+    var arr=[[${list}]]
+    var userObj=[[${user}]]
+</script>
+<!--@{}안에 있는 경로가 '/'로 시작하면,자동으로 context root를 추가해줌.-->
+<!--context root 설정은 application properties에서 하면 됌.-->
+<!--<a href="board.html" th:href="@{/board/list(bno=${bno}, type='L')}">aaa</a>-->
+
 <!--왠만하면 each를 이용하여 반복수행문을 작성하되, 화면에 출력되지 않는 경우 block 태그를 사용한다. -->
-<th:block th:each="opt:${list}">
+<!--아래 주석은 html이 봤을때는 주석, thymeleaf가 봤을때는 주석 아님으로 처리-->
+<!--/*/<th:block th:each="opt:${list}">/*/-->
     <input type="checkbox" th:value="${opt}">[[${opt}]]<br>
-</th:block>
+<!--/*/</th:block>/*/-->
+
 <!--multiple은 select를 펼쳐서 보여주게 하는 역할.-->
+<div>
 <select name="" id="" multiple>
     <option th:each="opt:${list}" th:value="${opt}">[[${opt}]]</option>
 </select>
+</div>
+
+<div>
+    <label for="MyFavorite">MyFavorite</label>
+</div>
+<div>
+<select name="MyFavorite" id="MyFavorite" multiple>
+    <option th:each="opt:${myFavorite}" value="${opt}">[[${opt}]]</option>
+</select>
+</div>
+
+
 <table border="1px">
-    <tr th:each="item : ${list}">
+    <tr th:each="item:${list}">
         <td th:text="${item}"></td>
     </tr>
-    <tr th:unless="${list.size()}==0">
-        <td>게시물이 없습니다.</td>
+<!--/*-->
+    <tr>
+        <td>1</td>
     </tr>
+    <tr>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+    </tr>
+    <!--*/-->
 </table>
 <h1 th:text="${lastName}">lastName</h1>
 <h1>[[${firstName}]]</h1>
